@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:    Render the feed via a Template Toolkit
 License:    GPL+ or Artistic
@@ -11,6 +11,7 @@ Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_version}.tar.gz
 
+BuildRequires: perl(Compress::Zlib)
 BuildRequires: perl(DateTime)
 BuildRequires: perl(DateTime::Duration)
 BuildRequires: perl(Encode)
@@ -20,11 +21,13 @@ BuildRequires: perl(HTML::Tidy)
 BuildRequires: perl(List::Util)
 BuildRequires: perl(Moose)
 BuildRequires: perl(MooseX::Traits)
+BuildRequires: perl(MooseX::ConfigFromFile)
 BuildRequires: perl(Template)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(TryCatch)
 BuildRequires: perl(URI::Fetch)
 BuildRequires: perl(XML::Feed)
+BuildRequires: perl(XML::OPML::SimpleGen)
 BuildRequires: perl(YAML)
 BuildRequires: perl(Module::Build::Compat)
 BuildArch: noarch
