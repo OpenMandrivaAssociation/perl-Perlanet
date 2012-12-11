@@ -1,37 +1,37 @@
 %define upstream_name    Perlanet
 %define upstream_version 0.53
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 4
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	5
 
-Summary:    Render the feed via a Template Toolkit
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Render the feed via a Template Toolkit
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Compress::Zlib)
-BuildRequires: perl(DateTime)
-BuildRequires: perl(DateTime::Duration)
-BuildRequires: perl(Encode)
-BuildRequires: perl(File::Path)
-BuildRequires: perl(HTML::Scrubber)
-BuildRequires: perl(HTML::Tidy)
-BuildRequires: perl(List::Util)
-BuildRequires: perl(Moose)
-BuildRequires: perl(MooseX::Traits)
-BuildRequires: perl(MooseX::ConfigFromFile)
-BuildRequires: perl(Template)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(TryCatch)
-BuildRequires: perl(URI::Fetch)
-BuildRequires: perl(XML::Feed)
-BuildRequires: perl(XML::OPML::SimpleGen)
-BuildRequires: perl(YAML)
-BuildRequires: perl(Module::Build::Compat)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Compress::Zlib)
+BuildRequires:	perl(DateTime)
+BuildRequires:	perl(DateTime::Duration)
+BuildRequires:	perl(Encode)
+BuildRequires:	perl(File::Path)
+BuildRequires:	perl(HTML::Scrubber)
+BuildRequires:	perl(HTML::Tidy)
+BuildRequires:	perl(List::Util)
+BuildRequires:	perl(Moose)
+BuildRequires:	perl(MooseX::Traits)
+BuildRequires:	perl(MooseX::ConfigFromFile)
+BuildRequires:	perl(Template)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(TryCatch)
+BuildRequires:	perl(URI::Fetch)
+BuildRequires:	perl(XML::Feed)
+BuildRequires:	perl(XML::OPML::SimpleGen)
+BuildRequires:	perl(YAML)
+BuildRequires:	perl(Module::Build::Compat)
+BuildArch:	noarch
 
 %description
 Perlanet is a program for creating programs that aggregate web feeds (both
@@ -52,26 +52,33 @@ all of these steps through subclassing and roles.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc README META.yml Changes
 %{_bindir}/perlanet
 %{_mandir}/man1/*
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+%changelog
+* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 0.530.0-4mdv2011.0
++ Revision: 657824
+- rebuild for updated spec-helper
+
+* Fri Dec 17 2010 Shlomi Fish <shlomif@mandriva.org> 0.530.0-3mdv2011.0
++ Revision: 622515
+- Bump the release to depend on the new OPML module
+- Added deps and bumped the rel number
+- import perl-Perlanet
 
 
+* Fri Dec 03 2010 cpan2dist 0.53-1mdv
+- initial mdv release, generated with cpan2dist
