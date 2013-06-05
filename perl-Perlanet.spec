@@ -2,14 +2,14 @@
 %define upstream_version 0.53
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%perl_convert_version 0.56
+Release:	1
 
 Summary:	Render the feed via a Template Toolkit
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DAVECROSS/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Symbol/DAVECROSS/Perlanet-0.56.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Compress::Zlib)
@@ -82,3 +82,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Fri Dec 03 2010 cpan2dist 0.53-1mdv
 - initial mdv release, generated with cpan2dist
+
