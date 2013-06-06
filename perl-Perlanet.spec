@@ -1,6 +1,5 @@
 %define upstream_name    Perlanet
-%define upstream_version 0.53
-
+%define upstream_version 0.56
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version 0.56
 Release:	1
