@@ -8,11 +8,7 @@ Summary:	Render the feed via a Template Toolkit
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-<<<<<<< HEAD
-Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DAVECROSS/%{upstream_name}-%{upstream_version}.tar.gz
-=======
 Source0:	http://www.cpan.org/modules/by-module/Symbol/DAVECROSS/Perlanet-0.56.tar.gz
->>>>>>> auto_update
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Compress::Zlib)
