@@ -1,13 +1,12 @@
 %define upstream_name    Perlanet
-%define upstream_version 0.56
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 0.56
-Release:	3
+Version:	0.56
+Release:	4
 
 Summary:	Render the feed via a Template Toolkit
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
+Url:		https://metacpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Symbol/DAVECROSS/Perlanet-0.56.tar.gz
 
 BuildRequires:	make
@@ -49,7 +48,7 @@ feed and renders this aggregate feed. Perlanet allows the user to customize
 all of these steps through subclassing and roles.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
